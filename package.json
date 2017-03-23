@@ -4,7 +4,7 @@
   "description": "simple way to get xml data.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive test/"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/schoeu/xmlpro/issues"
   },
-  "homepage": "https://github.com/schoeu/xmlpro#readme"
+  "homepage": "https://github.com/schoeu/xmlpro#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "xml2js": "^0.4.17"
+  }
 }

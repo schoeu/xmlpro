@@ -1,12 +1,24 @@
 /**
  * Created by schoeu on 2017/3/22.
  */
+var parseString = require('xml2js').parseString;
 
 var filterCtt = [];
 var keyLength;
 
 module.exports = {
-    getDatas: function (data, keys) {
+    getDatas: function (xmlString, keys, cb) {
+        var me = this;
+        parseString(xmlString, function (err, result) {
+            if (err) {
+                cb.call(this, err);
+            }
+            else if (result) {
+                cb.call(this, null, me.getKeys(result, keys));
+            }
+        });
+    },
+    getKeys: function (data, keys) {
         filterCtt = [];
         keyLength = keys.length;
         dataAlasis(data, keys, 0);

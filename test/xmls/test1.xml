@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DOCUMENT>
+    <item>
+        <key>key1</key>
+        <display>
+            <url>http://www.baidu.com</url>
+            <title>标题1</title>
+            <date>2011-12-02</date>
+        </display>
+    </item>
+</DOCUMENT>
