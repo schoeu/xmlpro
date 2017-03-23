@@ -30,7 +30,7 @@ function dataAlasis(d, k, l) {
             var crtData = item[key] || [];
             l && (l = k.indexOf(key));
             if (l == keyLength - 1) {
-                filterCtt.push(crtData.toString());
+                filterCtt.push(crtData);
             }
             else {
                 l++;

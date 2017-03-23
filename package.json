@@ -1,6 +1,6 @@
 {
   "name": "xmlpro",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "simple way to get xml data.",
   "main": "index.js",
   "scripts": {
