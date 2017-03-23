@@ -1,3 +1,26 @@
+# xmlpro
+
+> simple way to get xml data.
+
+## Install
+
+```
+npm install xmlpro
+```
+
+## Example
+
+```
+var xmlpro = require('xmlpro');
+var dataPath = 'item.list.key';
+var XMLData = '<DOCUMENT><list><key>key1</key></list><list><key>key2</key></list></DOCUMENT>';
+
+// data: [key1, key2]
+var data = xmlpro.getDatas(XMLData, dataPath);
+```
+
+## License
+
 MIT License
 
 Copyright (c) 2016 Schoeu
@@ -19,3 +42,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
