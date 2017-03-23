@@ -13,7 +13,8 @@ var fileBuffer = fs.readFileSync(__dirname + '/xmls/test1.xml');
 describe('api test.', function () {
     it('deep', function () {
         var dataPath = 'item.key';
-        var xmlData = xmlpro.getDatas(fileBuffer.toString(), dataPath);
-        expect(xmlData).to.be.equal('key1');
+        xmlpro.getDatas(fileBuffer.toString(), dataPath, function (err, rs) {
+            expect(rs).to.be.deep.equal([['key1']]);
+        });
     });
 });

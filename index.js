@@ -5,16 +5,29 @@ var parseString = require('xml2js').parseString;
 
 var filterCtt = [];
 var keyLength;
+var rootEle = 'DOCUMENT';
 
 module.exports = {
     getDatas: function (xmlString, keys, cb) {
         var me = this;
+        keys = keys || '';
+        var paths = keys.split('.');
+
+        // 去空
+        paths = paths.filter(function (e) {
+            if (e) {
+                return e;
+            }
+        });
+
+        paths.unshift(rootEle);
+
         parseString(xmlString, function (err, result) {
             if (err) {
                 cb.call(this, err);
             }
             else if (result) {
-                cb.call(this, null, me.getKeys(result, keys));
+                cb.call(this, null, me.getKeys(result, paths));
             }
         });
     },
