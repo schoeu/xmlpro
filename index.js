@@ -27,7 +27,12 @@ module.exports = {
                 cb.call(this, err);
             }
             else if (result) {
-                cb.call(this, null, me.getKeys(result, paths));
+                if (paths.length > 1) {
+                    cb.call(this, null, me.getKeys(result, paths));
+                }
+                else {
+                    cb.call(this, null, result);
+                }
             }
         });
     },
