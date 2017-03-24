@@ -2,6 +2,11 @@
 
 > simple way to get xml data.
 
+
+[![NPM Version](https://img.shields.io/npm/v/xmlpro.svg)](https://npmjs.org/package/node-docx)
+[![Linux Build](https://img.shields.io/travis/schoeu/xmlpro/master.svg?label=linux)](https://travis-ci.org/schoeu/docx)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+
 ## Install
 
 ```
@@ -16,7 +21,16 @@ var dataPath = 'item.list.key';
 var XMLData = '<DOCUMENT><list><key>key1</key></list><list><key>key2</key></list></DOCUMENT>';
 
 // data: [key1, key2]
-var data = xmlpro.getDatas(XMLData, dataPath);
+xmlpro.getDatas(XMLDataStr, dataPath, function (err, rs) {
+    // err: xml校验出错
+    if (err) {
+        // 容错处理
+    }
+
+    // rs: 根据路径获取到的数据
+    // data: [['key1'], ['key2']]
+    console.log(rs);
+});
 ```
 
 ## License
