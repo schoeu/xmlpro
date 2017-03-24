@@ -11,6 +11,10 @@ var xmlpro = require('../index');
 describe('api test.', function () {
     var fFile = fs.readFileSync(__dirname + '/xmls/test1.xml');
     var sFile = fs.readFileSync(__dirname + '/xmls/test2.xml');
+    var tFile = fs.readFileSync(__dirname + '/xmls/test3.xml');
+
+
+
 
     it('deep 1', function () {
         var dataPath = 'item.key';
@@ -44,6 +48,14 @@ describe('api test.', function () {
         var dataPath = 'item.display.imgs.attr.src';
         xmlpro.getDatas(sFile.toString(), dataPath, function (err, rs) {
             expect(rs).to.be.deep.equal([['jpg'], ['png']]);
+        });
+    });
+
+    it('invalid xml data.', function () {
+        var dataPath = 'item.display.imgs.attr.src';
+        xmlpro.getDatas(tFile.toString(), dataPath, function (err, rs) {
+            expect(!!err).to.be.ok;
+            expect(!!rs).to.not.be.ok;
         });
     });
 });
