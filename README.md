@@ -20,7 +20,6 @@ var xmlpro = require('xmlpro');
 var dataPath = 'item.list.key';
 var XMLData = '<DOCUMENT><list><key>key1</key></list><list><key>key2</key></list></DOCUMENT>';
 
-// data: [key1, key2]
 xmlpro.getDatas(XMLDataStr, dataPath, function (err, rs) {
     // err: xml校验出错
     if (err) {
