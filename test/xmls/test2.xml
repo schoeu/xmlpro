@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DOCUMENT>
+    <item>
+        <key>key1</key>
+        <display>
+            <url>http://www.baidu.com</url>
+            <title>title1</title>
+            <date>2011-12-02</date>
+            <list>
+                <name>name1</name>
+            </list>
+            <list>
+                <name>name2</name>
+            </list>
+            <list>
+                <name>name3</name>
+            </list>
+            <imgs>
+                <attr>
+                    <src>jpg</src>
+                </attr>
+            </imgs>
+            <imgs>
+                <attr>
+                    <src>png</src>
+                </attr>
+            </imgs>
+        </display>
+    </item>
+</DOCUMENT>

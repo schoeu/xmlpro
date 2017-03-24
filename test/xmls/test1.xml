@@ -4,8 +4,11 @@
         <key>key1</key>
         <display>
             <url>http://www.baidu.com</url>
-            <title>标题1</title>
+            <title>title1</title>
             <date>2011-12-02</date>
+            <list>
+                <name>name1</name>
+            </list>
         </display>
     </item>
 </DOCUMENT>

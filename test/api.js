@@ -8,13 +8,42 @@ var fs = require('fs');
 var expect = require('chai').expect;
 var xmlpro = require('../index');
 
-var fileBuffer = fs.readFileSync(__dirname + '/xmls/test1.xml');
-
 describe('api test.', function () {
-    it('deep', function () {
+    var fFile = fs.readFileSync(__dirname + '/xmls/test1.xml');
+    var sFile = fs.readFileSync(__dirname + '/xmls/test2.xml');
+
+    it('deep 1', function () {
         var dataPath = 'item.key';
-        xmlpro.getDatas(fileBuffer.toString(), dataPath, function (err, rs) {
+        xmlpro.getDatas(fFile.toString(), dataPath, function (err, rs) {
             expect(rs).to.be.deep.equal([['key1']]);
+        });
+    });
+
+    it('deep 2', function () {
+        var dataPath = 'item.display.title';
+        xmlpro.getDatas(fFile.toString(), dataPath, function (err, rs) {
+            expect(rs).to.be.deep.equal([['title1']]);
+        });
+    });
+
+    it('deep 3', function () {
+        var dataPath = 'item.display.list.name';
+        xmlpro.getDatas(fFile.toString(), dataPath, function (err, rs) {
+            expect(rs).to.be.deep.equal([['name1']]);
+        });
+    });
+
+    it('mux deep 3', function () {
+        var dataPath = 'item.display.list.name';
+        xmlpro.getDatas(sFile.toString(), dataPath, function (err, rs) {
+            expect(rs).to.be.deep.equal([['name1'], ['name2'], ['name3']]);
+        });
+    });
+
+    it('mux deep 4', function () {
+        var dataPath = 'item.display.imgs.attr.src';
+        xmlpro.getDatas(sFile.toString(), dataPath, function (err, rs) {
+            expect(rs).to.be.deep.equal([['jpg'], ['png']]);
         });
     });
 });
