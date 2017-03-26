@@ -13,9 +13,6 @@ describe('api test.', function () {
     var sFile = fs.readFileSync(__dirname + '/xmls/test2.xml');
     var tFile = fs.readFileSync(__dirname + '/xmls/test3.xml');
 
-
-
-
     it('deep 1', function () {
         var dataPath = 'item.key';
         xmlpro.getDatas(fFile.toString(), dataPath, function (err, rs) {
